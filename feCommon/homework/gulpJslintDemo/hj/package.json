@@ -1,0 +1,26 @@
+{
+  "name": "hj",
+  "version": "1.0.0",
+  "description": "hejun-gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/grARM/festudy.git"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "hejun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grARM/festudy/issues"
+  },
+  "homepage": "https://github.com/grARM/festudy#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jslint": "^1.0.10"
+  }
+}
