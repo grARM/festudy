@@ -1,6 +1,1 @@
-{
-    "src": ["checkFile/*"],
-    "checkedFiles": [],
-    "checkingFile": "",
-    "unCheckFiles": []
-}
+{"src":["checkFile/*"],"checkedFiles":["/Users/junhe/other/festudy/feCommon/homework/gulpJslintDemo/hj/checkFile/huxing.js","/Users/junhe/other/festudy/feCommon/homework/gulpJslintDemo/hj/checkFile/llla.js"],"checkingFile":""}
