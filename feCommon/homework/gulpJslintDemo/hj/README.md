@@ -5,7 +5,8 @@ http://blog.csdn.net/weixin_36401046/article/details/52954408<br>
 该文件是个隐藏文件，在文件夹中不可见
 
 * 2.初次创建的时候，未指定项目入口文件，导致无法正确找文件位置
-
+* 3.在pipe中获取文件名 <br>
+https://segmentfault.com/q/1010000003013880
 
 
 # 建议：
