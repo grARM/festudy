@@ -16,13 +16,12 @@ gulp.task('jslint', function () {
                     }
                     fs.writeFile('files.json', JSON.stringify(Files), function (err) {
                         if (err) throw err;
-                        console.log('写入完成');
                     });
                     this.push(file);
                     cb();
                 })
             )
-            .pipe(jslint.reporter( 'default' ));
+            .pipe(jslint.reporter( 'stylish' ));
 });
 
 var watcher = gulp.watch(Files.src, ['jslint']);
