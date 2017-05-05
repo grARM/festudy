@@ -8,19 +8,19 @@
 var chalk = require('chalk'),
     path = require('path');
 
-module.exports = function ( test ) {
+module.exports = function ( config ) {
     // explicitly convert boolean
-    var errorsOnly = test.errorsOnly === true;
+    var errorsOnly = config.errorsOnly === true;
 
     return function ( results ) {
         // print the filename and status of the linting
         if (results.success) {
             if (!errorsOnly) {
-                test.complete(results.filename);
+                config.complete(results.filename);
                 console.log(chalk.green(' ✓ %s'), path.basename(results.filename));
             }
         } else {
-            test.todo(results.filename);
+            config.todo(results.filename);
             console.log(chalk.red(' ✖ %s'), path.basename(results.filename));
         }
 

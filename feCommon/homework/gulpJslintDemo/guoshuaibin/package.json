@@ -12,7 +12,5 @@
     "gulp": "^3.9.1",
     "gulp-jslint": "^1.0.10"
   },
-  "dependencies": {
-    "jquery": "^3.2.1"
-  }
+  "dependencies": {}
 }
