@@ -8,6 +8,7 @@ var gulp = require('gulp'),
 //     var result = JSON.parse(fs.readFileSync('./src/testJson.json'));
 //     return result;
 // }
+// 数组查找元素，返回位置
 function indexOfArr(ele, arr) {
     var i;
     for (i = 0; i < arr.length; i++) {
@@ -18,11 +19,11 @@ function indexOfArr(ele, arr) {
     }
     return -1;
 }
-
-function writeJson(filename) {
-    fs.writeFileSync(filename, JSON.stringify(testJson));
+// 写json到文件
+function writeJson(filename, jsonObj) {
+    fs.writeFileSync(filename, JSON.stringify(jsonObj));
 }
-
+// json文件添加todo
 function addTodo(rightPath) {
     var i;
     rightPath = rightPath.replace(testJson.baseUrl, '');
@@ -34,11 +35,11 @@ function addTodo(rightPath) {
     if (i < 0) {
         testJson.todo.push(rightPath);
     }
-    writeJson('./src/testJson.json');
+    writeJson('./src/testJson.json', testJson);
     // console.log(testJson);
     console.log('update testJson.json ✓');
 }
-
+// json文件添加complete
 function addComplete(rightPath) {
     var i;
     rightPath = rightPath.replace(testJson.baseUrl, '');
@@ -50,17 +51,17 @@ function addComplete(rightPath) {
     if (i < 0) {
         testJson.complete.push(rightPath);
     }
-    writeJson('./src/testJson.json');
+    writeJson('./src/testJson.json', testJson);
     // console.log(testJson);
     console.log('update testJson.json ✓');
 }
-
+// gulp-jslint任务
 function doTestJs (srcpath) {
     gulp.src(srcpath)
         .pipe(jslint({
             for: true
         }))
-        .pipe(jslint.reporter('default', {errorsOnly: false, complete: addComplete, todo: addTodo}))
+        .pipe(jslint.reporter('guo-reporter', {errorsOnly: false, complete: addComplete, todo: addTodo}))
         // .pipe(gulp.dest('./testResult'))
         // .pipe(testList.complete)
         .on('error', function (error) {

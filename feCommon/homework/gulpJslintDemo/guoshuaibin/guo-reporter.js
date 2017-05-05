@@ -1,5 +1,5 @@
 /**
- * lib/reporters/default.js - gulp-jslint
+ * lib/reporters/my-reporter.js - gulp-jslint
  * Copyright (C) 2014-2016 Karim Alibhai.
  */
 
