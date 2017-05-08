@@ -74,6 +74,7 @@ function doTestJs (srcpath) {
 
 //定义一个testJs任务（自定义任务名称）
 gulp.task('testJs', function () {
+    // var testList = readJson();
     doTestJs(testJson.todo);
 }); 
 gulp.task('default',['testJs']); //定义默认任务 elseTask为其他任务，该示例没有定义elseTask任务
