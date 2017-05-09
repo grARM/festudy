@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var jslint = require('gulp-jslint');
 var Files = require('./files.json');
-var path = require('path');
+// var path = require('path');
 var through = require('through2');
 var fs = require('fs');
 
@@ -20,10 +20,10 @@ gulp.task('jslint', function () {
                     }
                 });
                 this.push(file);
-                cb();
+                cb && cb();
             })
         )
-        .pipe(jslint.reporter( 'stylish' ));
+        .pipe(jslint.reporter('stylish'));
 });
 
 var watcher = gulp.watch(Files.src, ['jslint']);
@@ -31,4 +31,4 @@ watcher.on('change', function (event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 });
 
-gulp.task('default',['jslint']); 
+gulp.task('default', ['jslint']);
