@@ -11,8 +11,9 @@ gulp.task('jslint', function () {
         .pipe(
             // 将已经检查的文件名写入checkdFiles字段
             through.obj(function (file, enc, cb) {
-                if (Files.checkedFiles.indexOf(file.path) < 0){
-                    Files.checkedFiles.push(file.path);
+                var path = file.path.slice(file.path.lastIndexOf("/"));
+                if (Files.checkedFiles.indexOf(path) < 0) {
+                    Files.checkedFiles.push(path);
                 }
                 fs.writeFile('files.json', JSON.stringify(Files), function (err) {
                     if (err) {
