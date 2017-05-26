@@ -24,6 +24,15 @@
             <div class="left1"><h4>左边栏</h4></div>
             <div class="right1"><h4>右边栏</h4></div>
         </div>
+        <h2>负边距实验</h2>
+        <h4>margin-left,margin-top为负</h4>
+        <div class="shiyan11"></div>
+        <div class="shiyan12"></div>
+        <div class="clear"></div>
+        <h4>margin-right,margin-bottom为负</h4>
+        <div class="shiyan21"></div>
+        <div class="shiyan22"></div>
+        <h4>根据以上的实验可以知道，都是后面的元素压住前面的元素，符合文档流的规则</h4>
     </body>
     <style>
     .container{ 
@@ -81,6 +90,37 @@
         background-color: darkorchid;
         float:left;
         margin-left: -200px;
+    }
+    .shiyan11{
+        width: 200px;
+        height: 200px;
+        float: left;
+        background: green;
+    }
+    .shiyan12{
+        width: 200px;
+        height: 200px;
+        float: left;
+        background: yellow;
+        margin-left: -50px;
+        margin-top: -50px;
+    }
+    .shiyan21{
+        width: 200px;
+        height: 200px;
+        float: left;
+        background: green;
+        margin-right: -50px;
+        margin-bottom: -50px;
+    }
+    .shiyan22{
+        width: 200px;
+        height: 200px;
+        float: left;
+        background: yellow;
+    }
+    .clear{
+        clear: both;
     }
     </style>
 </html>
