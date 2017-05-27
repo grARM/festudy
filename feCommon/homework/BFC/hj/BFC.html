@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>BFC各种实验</title>
+    </head>
+    <body>
+        <h2>清除浮动</h2>
+        <div class="i-f-1">
+            <div class="i-c-1">没有触发BFC</div>
+        </div>
+        <div class="clear"></div>
+        <div class="i-f-2">
+            <div class="i-c-2">触发BFC</div>
+        </div>
+
+        <h2>防止margin 重叠</h2>
+        <div class="f-c-1">margin重叠</div>
+        <div class="f-c-2">没触发BFC</div>
+        <h4>设置其中一个元素 父元素BFC</h4>
+        <div class="f-c-3">margin不重叠</div>
+        <div class="f-c-4-f"><div class="f-c-4">触发BFC</div></div>
+
+        <h2>自适应布局</h2>
+        <h4>两栏自适应</h4>
+        <div class="clear"></div>
+        <div class="n-c-1">我是左边的浮动元素</div>
+        <div class="n-c-2">我是右边的BFC</div>
+        <div class="clear"></div>
+        <h4>三栏自适应</h4>
+        <div class="n-d-1">我是左边的浮动元素</div>
+        <div class="n-d-3">我是右边的浮动元素</div>
+        <div class="n-d-2">我是中间的的BFC我是中间的的BFC我是中间的的BFC我是中间的的B我是中间的的BFC我是中间的的BFC
+            FC我是中间的的BFC我是中间的的BFC我是中间的的BFC我是中间的的BFC我是中间的的BFC我是中间的的BFC
+            我是中间的的BFC我是中间的的BFC我是中间的的BFC我是中间的的BFC我是中间的的我是中间的的BFC我是中间的的BFC
+            BFC我是中间的的BFC我是中间的的BFC我是中间的的BFC我是中间的的BFC我是中间的的BFC</div>
+        
+    </body>
+    <style>
+    .i-f-1 {
+        background: green;
+    }
+    .i-c-1 {
+        width: 100px;
+        height: 100px;
+        float: left;
+        background: yellow;
+    }
+    .i-f-2 {
+        background: green;
+        overflow: hidden;
+    }
+    .i-c-2 {
+        width: 100px;
+        height: 100px;
+        float: left;
+        background: yellow;
+    }
+    .clear{
+        clear: both;
+        height: 10px;
+    }
+    .f-c-1{
+        width: 100px;
+        height: 100px;
+        background: green;
+        margin: 50px;
+    }
+    .f-c-2{
+        width: 100px;
+        height: 100px;
+        background: yellow;
+        margin: 50px;
+    }
+    .f-c-3{
+        width: 100px;
+        height: 100px;
+        background: green;
+        margin: 50px;
+    }
+    .f-c-4-f {
+        overflow: hidden;
+    }
+    .f-c-4{
+        width: 100px;
+        height: 100px;
+        background: yellow;
+        margin: 50px;
+    }
+    .n-c-1 {
+        width: 100px;
+        height: 100px;
+        float: left;
+        background: green;
+    }
+    .n-c-2 {
+        height: 100px;
+        overflow: hidden;
+        background: yellow;
+    }
+    .n-d-1{
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin-right: 10px;
+        background: green;
+    }
+    .n-d-3{
+        width: 100px;
+        height: 100px;
+        float: right;
+        margin-left: 10px;
+        background: green;
+    }
+    .n-d-2{
+        height: 100px;
+        overflow: hidden;
+        background: yellow;
+    }
+    </style>
+</html>
