@@ -16,6 +16,7 @@ theme: moon
 # webpack是干什么的
 
 * 打包？
+* CommonJS
 * 部署中资源的映射
 * 小尺寸的资源内联
 * 发布新版本的缓存带时间戳
@@ -62,7 +63,7 @@ theme: moon
 
 [slide]
 
-# webpack in vue
+# webpack in vue & ad
 * require('webpack')
 * webpack-merge
 * return就好
